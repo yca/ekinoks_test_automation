@@ -135,7 +135,7 @@ console.error(new Error('Whoops, something bad happened'));
         var fps2 = ["5", "15", "20", "12.5"];
         for (let i = 0; i < resolution1.length; i++){
             await nav.toResolution(page);
-            await resolution.set_profile(page, "Yayın1");
+            await resolution.set_stream_mode(page, "Yayın1");
             await resolution.set_resolution1(page, resolution1[i]);  
             await resolution.set_fps1(page, fps1[i]);
             await resolution.apply(page);
@@ -144,7 +144,7 @@ console.error(new Error('Whoops, something bad happened'));
         
         for (let i = 0; i < resolution2.length; i++){
             await nav.toResolution(page);
-            await resolution.set_profile(page, "Yayın1");
+            await resolution.set_stream_mode(page, "Yayın1");
             await resolution.set_resolution2(page, resolution2[i]);    
             await resolution.set_fps2(page, fps2[i]);
             await resolution.apply(page);
@@ -157,6 +157,7 @@ console.error(new Error('Whoops, something bad happened'));
         //61-62-63-64
         for (let i = 0; i < resolution1.length; i++){
             await nav.toResolution(page);
+            await resolution.set_stream_mode(page, "Yayın1");
             await resolution.set_resolution1(page, resolution1[i]);
             await resolution.set_fps1(page, fps1[i]);
             await resolution.apply(page);
@@ -165,6 +166,7 @@ console.error(new Error('Whoops, something bad happened'));
         //65-66-67-68
         for(let i = 0; i < resolution2.length; i++){
             await nav.toResolution(page);
+            await resolution.set_stream_mode(page, "Yayın1");
             await resolution.set_resolution2(page, resolution2[i]);
             await resolution.set_fps2(page, fps2[i]);
             await resolution.apply(page);

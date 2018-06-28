@@ -1,0 +1,7 @@
+width=1920
+height=1080
+coded_width=1920
+coded_height=1088
+pix_fmt=yuvj420p
+r_frame_rate=25/2
+avg_frame_rate=17250/1261

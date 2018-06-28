@@ -9,18 +9,23 @@ var camera = require("./camera");
 var version = require("./version");
 var alarm = require("./alarm");
 var time = require("./time");
+var question = require("./question");
+var capture = require('./capture_test');
+const fs = require('fs');
+const path = require('path');
+
 
 let testIt = async () => {
+//        answer = await question.ask("Led yanıyor mu?");
+//        console.log(answer);
+
+        capture.ffprobe();
+        console.log(sonuc);
+        
 	const browser = await puppeteer.launch({headless: false});
 	const page = await browser.newPage();
 	await login.loginCamera(page, 'http://10.5.176.249:8080');
-console.error(new Error('Whoops, something bad happened'));
-	//while (1) {
-		//var iframes = ["12", "24", "36", "48"];
-		//for (let i = 0; i < iframes.length; i++) {
-			//await nav.toVersion(page);
-			//console.log("Setting i-frame interval to " + iframes[i]);
-                       
+	                       
                        // Kontrol 22
                         console.log(" ");
                         console.log("Kontrol 22 STARTED");
@@ -109,6 +114,21 @@ console.error(new Error('Whoops, something bad happened'));
                       await nav.toAlarm(page);
                       await alarm.test_sei_selected(page);
                         
+                      
+                      
+                      //TEST 39
+                      //await nav.toALarm(page); 
+                      await alarm.set_sei_select(page , 1);
+                      await alarm.set_motion_detector(page,"a")
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
                       //TEST 41
                       
                       console.log("");
@@ -133,6 +153,7 @@ console.error(new Error('Whoops, something bad happened'));
         var fps1 = ["15", "10", "20", "12.5"];
         var resolution2 = ["640 x 368", "480 x 272", "320 x 180", "640 x 368"];
         var fps2 = ["5", "15", "20", "12.5"];
+
         for (let i = 0; i < resolution1.length; i++){
             await nav.toResolution(page);
             await resolution.set_stream_mode(page, "Yayın1");
@@ -186,6 +207,6 @@ console.error(new Error('Whoops, something bad happened'));
 }
 
 testIt().then((value) => {
-	console.log("Testing done " + value); // Success!
+	console.log("Testing done " + 1); // Success!
 });
 

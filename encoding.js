@@ -6,7 +6,6 @@
         const BIT_CON_MET = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(2) > div > div > select';
         const CODDING_QUAL = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(3) > div > div > select';
         const BIT_RATE = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(4) > div > div > input';
-        
         const CALC_METHOD = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(6) > div > div > select';
         
 	module.exports.set_intraframe = async function(page, iFrameInterval) {
@@ -22,7 +21,6 @@
             await page.click(BIT_CON_MET);
             await page.keyboard.type(set);
             await page.keyboard.type('Enter');
-            //await page.click(BIT_CON_MET);
             
         }
         
@@ -32,15 +30,14 @@
             await page.click(CODDING_QUAL);
             await page.keyboard.type(set);
             await page.keyboard.type('Enter');
-            //await page.click(CODDING_QUAL);
           
         }
         
         module.exports.set_bit_rate = async function(page, set) {
 		await page.click(BIT_RATE);
 		for (let i = 0; i < 20; i++)
-                    await page.keyboard.down('Backspace');
-                    await page.keyboard.type(set);
+                await page.keyboard.down('Backspace');
+                await page.keyboard.type(set);
 		
 	}
 	module.exports.set_calc_method = async function(page, set) {

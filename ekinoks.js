@@ -19,7 +19,7 @@ let testIt = async () => {
 //        answer = await question.ask("Led yanıyor mu?");
 //        console.log(answer);
 
-        capture.ffprobe();
+        capture.ffprobe("10.5.177.46","stream1");
         console.log(sonuc);
         
 	const browser = await puppeteer.launch({headless: false});
@@ -42,10 +42,10 @@ let testIt = async () => {
                         console.log(" ");
                         console.log("Control 23 STARTED");
                         await nav.toEncodingLow(page);
-                        await encodingLow.set_intraframe(page, "15");
-			await encodingLow.set_bit_con(page, "cbr");
-                        await encodingLow.set_codding_quality(page, "orta");
-                        await encodingLow.set_bit_rate(page, "0.4");
+                         encodingLow.set_intraframe(page, "15");
+			 encodingLow.set_bit_con(page, "cbr");
+                         encodingLow.set_codding_quality(page, "orta");
+                         encodingLow.set_bit_rate(page, "0.4");
                         await encodingLow.apply(page);
                         console.log("OPTIONS SETTED ");
                         

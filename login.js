@@ -1,8 +1,7 @@
-(function() {
-	
-	const LOGIN_USERNAME_SELECTOR = 'body > div.container-fluid > div:nth-child(3) > div.col-md-8 > div.view-container > div > form > div:nth-child(1) > div > div > input';
-	const LOGIN_PASSWORD_SELECTOR = 'body > div.container-fluid > div:nth-child(3) > div.col-md-8 > div.view-container > div > form > div:nth-child(2) > div > div > div > input';
-	const LOGIN_BUTTON_SELECTOR = 'body > div.container-fluid > div:nth-child(3) > div.col-md-8 > div.view-container > div > form > div:nth-child(3) > div > div > button';
+ (function() {
+	const LOGIN_USERNAME_SELECTOR = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(1) > div > div > input';
+	const LOGIN_PASSWORD_SELECTOR = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(2) > div > div > input';
+	const LOGIN_BUTTON_SELECTOR = 'body > div > div:nth-child(3) > div.col-md-8 > div.view-container > div > div > div:nth-child(3) > div > div > button';
 	
 	module.exports.loginCamera = async function(page, camurl) {
 		await page.goto(camurl, {"waitUntil": "networkidle2"});
@@ -19,4 +18,6 @@
 		return {};
 	}
 	
+	
 }());
+
